@@ -1,0 +1,7 @@
+
+{
+  "main": "kata_fizzbuzz.js",
+	"scripts": {
+		"test": "node --test"
+	}
+}
