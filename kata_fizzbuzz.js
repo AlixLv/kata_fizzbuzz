@@ -1,48 +1,7 @@
-function createSeriesNumber(maxNumber) {
-	let arrayOfNumber = [];
-	let count = 1;
-	while (arrayOfNumber.length < maxNumber) {
-		arrayOfNumber.push(count);
-		count++;
-	}
-	console.log(arrayOfNumber);
-	isFizzBuzz(arrayOfNumber);
-	return arrayOfNumber;
-}
-
-function isFizzBuzz(seriesNumber) {
-	for (let i = 0; i < seriesNumber.length; i++) {
-		if (seriesNumber[i] % 3 == 0 && seriesNumber[i] % 5 == 0) {
-			console.log(seriesNumber[i], "FizzBuzz !");
-		} else if (seriesNumber[i] % 3 == 0) {
-			console.log(seriesNumber[i], "Fizz !");
-		} else if (seriesNumber[i] % 5 == 0) {
-			console.log(seriesNumber[i], "Buzz !");
-		} else {
-			console.log(seriesNumber[i]);
-		}
-	}
-}
-
-// let seriesNumber = createSeriesNumber(100);
-
-// ------------------- VERSION AVEC PARAMETRES MODIFIABLES ------------------------
-
-function createSeriesNumber(maxNumber) {
-	let arrayOfNumber = [];
-	let count = 1;
-	while (arrayOfNumber.length < maxNumber) {
-		arrayOfNumber.push(count);
-		count++;
-	}
-	console.log(arrayOfNumber);
-	numberIsFizzBuzz(arrayOfNumber);
-	return arrayOfNumber;
-}
-
 function isFizzBuzz(numberToOperate, moduloOne, moduloTwo) {
 	if (numberToOperate % moduloOne === 0 && numberToOperate % moduloTwo === 0) {
 		console.log(numberToOperate, "FizzBuzz !");
+		return "FizzBuzz !";
 	} else {
 		return;
 	}
@@ -51,6 +10,7 @@ function isFizzBuzz(numberToOperate, moduloOne, moduloTwo) {
 function isFizz(numberToOperate, modulo) {
 	if (numberToOperate % modulo === 0) {
 		console.log(numberToOperate, "Fizz !");
+		return "Fizz !";
 	} else {
 		return;
 	}
@@ -59,6 +19,7 @@ function isFizz(numberToOperate, modulo) {
 function isBuzz(numberToOperate, modulo) {
 	if (numberToOperate % modulo === 0) {
 		console.log(numberToOperate, "Buzz !");
+		return "Buzz !";
 	} else {
 		return;
 	}
@@ -67,6 +28,7 @@ function isBuzz(numberToOperate, modulo) {
 function isNotFizzBuzz(numberToOperate, moduloOne, moduloTwo) {
 	if (numberToOperate % moduloOne != 0 && numberToOperate % moduloTwo != 0) {
 		console.log(numberToOperate);
+		return numberToOperate;
 	} else {
 		return;
 	}
@@ -86,4 +48,18 @@ function numberIsFizzBuzz(seriesNumber) {
 	}
 }
 
-let seriesNumber = createSeriesNumber(100);
+function createSeriesNumber(maxNumber) {
+	let arrayOfNumber = [];
+	let count = 1;
+	while (arrayOfNumber.length < maxNumber) {
+		arrayOfNumber.push(count);
+		count++;
+	}
+	console.log(arrayOfNumber);
+	numberIsFizzBuzz(arrayOfNumber);
+	return arrayOfNumber;
+}
+
+let seriesNumber = createSeriesNumber(25);
+
+module.exports = { isFizzBuzz, isFizz, isBuzz, isNotFizzBuzz };
